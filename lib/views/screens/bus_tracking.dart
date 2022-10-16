@@ -1,4 +1,6 @@
+import 'package:bustracker/global/global_config.dart';
 import 'package:bustracker/models/travel_tracking_header_model.dart';
+import 'package:bustracker/views/widgets/label_widget.dart';
 import 'package:bustracker/views/widgets/student_status_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -20,16 +22,21 @@ class BusTrackingScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Journey Started at ${travelHeader.startTime}',
-            style: const TextStyle(
-                fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold),
+          const SizedBox(
+            height: 15,
+          ),
+          LabelValue(
+              label: 'Journey Started at:',
+              value: formatDate(travelHeader.startTime!)),
+          const SizedBox(
+            height: 15,
           ),
           Expanded(
             child: ListView.builder(
               itemCount: travelHeader.studentTracking!.length,
               itemBuilder: (context, index) {
                 return StudentTrackingWidget(
+                    travelHeader: travelHeader,
                     studentTracking: travelHeader.studentTracking![index]);
               },
             ),

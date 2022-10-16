@@ -17,10 +17,13 @@ class _BusMainScreenState extends State<BusMainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Students'),
+        title: const Center(child: Text('School Bus Tracking')),
         backgroundColor: Colors.orange,
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.orange,
+        fixedColor: Colors.white,
+        unselectedItemColor: const Color.fromARGB(255, 252, 208, 143),
         currentIndex: currentIndex,
         onTap: (value) {
           navidateTo(value);

@@ -15,8 +15,11 @@ class HomeScreen extends StatelessWidget {
       color: const Color.fromARGB(255, 252, 208, 143),
       child: Column(
         children: [
+          const SizedBox(
+            height: 15,
+          ),
           InkWell(
-            child: Text('Start Journey'),
+            child: const Text('Start Journey'),
             onTap: () {
               TravelHeader travelHeader = TravelHeader(
                   headerStatus: HeaderStatus().completed,
@@ -42,25 +45,6 @@ class HomeScreen extends StatelessWidget {
               itemCount: students_model.length,
               itemBuilder: (context, index) {
                 return StudentWidget(student: students_model[index]);
-              },
-            ),
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: travelHeaderList.length,
-              itemBuilder: (context, index) {
-                return InkWell(
-                    child: Text(
-                        'Tracking $index @ ${travelHeaderList[index].startTime}'),
-                    onTap: (() {
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) {
-                          return BusTrackingScreen(
-                            travelHeader: travelHeaderList[index],
-                          );
-                        },
-                      ));
-                    }));
               },
             ),
           ),

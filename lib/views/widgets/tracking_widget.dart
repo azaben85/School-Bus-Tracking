@@ -14,7 +14,6 @@ class TackingArea extends StatelessWidget {
         margin: const EdgeInsets.all(5),
         padding: const EdgeInsets.all(5),
         color: Colors.white,
-        height: MediaQuery.of(context).size.height / 2,
         child: ListView.builder(
           itemCount: studentTrackingList!.length,
           itemBuilder: (context, index) {
