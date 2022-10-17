@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
             child: const Text('Start Journey'),
             onTap: () {
               TravelHeader travelHeader = TravelHeader(
-                  headerStatus: HeaderStatus().completed,
+                  headerStatus: HeaderStatus().pending,
                   startTime: DateTime.now());
               travelHeader.studentTracking = students_model
                   .map((student) => StudentTracking(

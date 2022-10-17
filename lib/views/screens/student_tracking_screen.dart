@@ -32,7 +32,7 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen> {
         title: Center(child: Text('${widget.studentTracking.student!.name}')),
         backgroundColor: Colors.orange,
         leading: IconButton(
-          icon: Icon(Icons.home),
+          icon: Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.of(context).pushReplacement(MaterialPageRoute(
               builder: (context) {
@@ -41,21 +41,6 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen> {
             ));
           },
         ),
-        actions: [
-          InkWell(
-            child: const Padding(
-              padding: EdgeInsets.all(5.0),
-              child: Icon(Icons.home),
-            ),
-            onTap: () {
-              Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (context) {
-                  return BusTrackingScreen(travelHeader: widget.travelHeader);
-                },
-              ));
-            },
-          )
-        ],
       ),
       backgroundColor: const Color.fromARGB(255, 252, 208, 143),
       body: Column(
@@ -84,6 +69,7 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen> {
                   status: StudentStatus().start,
                   studentTracking: widget.studentTracking,
                   onTap: () {
+                    widget.travelHeader.headerStatus = HeaderStatus().start;
                     setState(() {});
                   },
                 ),
@@ -92,6 +78,7 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen> {
                   status: StudentStatus().near,
                   studentTracking: widget.studentTracking,
                   onTap: () {
+                    widget.travelHeader.headerStatus = HeaderStatus().start;
                     setState(() {});
                   },
                 ),
@@ -100,6 +87,7 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen> {
                   status: StudentStatus().completed,
                   studentTracking: widget.studentTracking,
                   onTap: () {
+                    widget.travelHeader.headerStatus = HeaderStatus().start;
                     setState(() {});
                   },
                 ),
