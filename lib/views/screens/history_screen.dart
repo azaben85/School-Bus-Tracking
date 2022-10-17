@@ -13,7 +13,7 @@ class HistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color.fromARGB(255, 252, 208, 143),
+      color: globalBackgroundColor,
       child: ListView.builder(
         itemCount: travelHeaderList.length,
         itemBuilder: (context, index) {

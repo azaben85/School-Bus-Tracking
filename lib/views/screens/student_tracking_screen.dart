@@ -42,7 +42,7 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen> {
           },
         ),
       ),
-      backgroundColor: const Color.fromARGB(255, 252, 208, 143),
+      backgroundColor: globalBackgroundColor,
       body: Container(
         margin: EdgeInsets.all(4),
         child: Column(

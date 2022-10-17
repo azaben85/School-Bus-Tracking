@@ -26,7 +26,7 @@ class _BusTrackingScreenState extends State<BusTrackingScreen> {
         title: const Text('Students'),
         backgroundColor: Colors.orange,
       ),
-      backgroundColor: const Color.fromARGB(255, 252, 208, 143),
+      backgroundColor: globalBackgroundColor,
       body: Container(
         margin: const EdgeInsets.all(4.0),
         child: Column(
