@@ -32,7 +32,7 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen> {
         title: Center(child: Text('${widget.studentTracking.student!.name}')),
         backgroundColor: Colors.orange,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.of(context).pushReplacement(MaterialPageRoute(
               builder: (context) {
@@ -43,81 +43,84 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen> {
         ),
       ),
       backgroundColor: const Color.fromARGB(255, 252, 208, 143),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(
-            height: 15,
-          ),
-          LabelValue(
-              label: 'Journey Started at:',
-              value: formatDate(widget.studentTracking.startTime!)),
-          const SizedBox(
-            height: 15,
-          ),
-          LabelValue(
-            label: 'Address:',
-            value: widget.studentTracking.student!.address!,
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Wrap(
-            children: [
-              if (currentStatusCode == '00' || currentStatusCode == '05')
-                StatusButton(
-                  status: StudentStatus().start,
-                  studentTracking: widget.studentTracking,
-                  onTap: () {
-                    widget.travelHeader.headerStatus = HeaderStatus().start;
-                    setState(() {});
-                  },
-                ),
-              if (currentStatusCode == '15' || currentStatusCode == '10')
-                StatusButton(
-                  status: StudentStatus().near,
-                  studentTracking: widget.studentTracking,
-                  onTap: () {
-                    widget.travelHeader.headerStatus = HeaderStatus().start;
-                    setState(() {});
-                  },
-                ),
-              if (currentStatusCode == '15' || currentStatusCode == '10')
-                StatusButton(
-                  status: StudentStatus().completed,
-                  studentTracking: widget.studentTracking,
-                  onTap: () {
-                    widget.travelHeader.headerStatus = HeaderStatus().start;
-                    setState(() {});
-                  },
-                ),
-              if (currentStatusCode != '00' && currentStatusCode != '05')
-                StatusButton(
-                  status: StudentStatus().changedDirection,
-                  studentTracking: widget.studentTracking,
-                  onTap: () {
-                    setState(() {});
-                  },
-                ),
-              if (currentStatusCode == '20')
-                StatusButton(
-                  status: StudentStatus().confirmedByParent,
-                  studentTracking: widget.studentTracking,
-                  onTap: () {
-                    setState(() {});
-                  },
-                ),
-            ],
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Expanded(
-            child: TackingArea(
-              studentTrackingList: widget.studentTracking.studentTrackingList,
+      body: Container(
+        margin: EdgeInsets.all(4),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 15,
             ),
-          ),
-        ],
+            LabelValue(
+                label: 'Journey Started at:',
+                value: formatDate(widget.studentTracking.startTime!)),
+            const SizedBox(
+              height: 15,
+            ),
+            LabelValue(
+              label: 'Address:',
+              value: widget.studentTracking.student!.address!,
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Wrap(
+              children: [
+                if (currentStatusCode == '00' || currentStatusCode == '05')
+                  StatusButton(
+                    status: StudentStatus().start,
+                    studentTracking: widget.studentTracking,
+                    onTap: () {
+                      widget.travelHeader.headerStatus = HeaderStatus().start;
+                      setState(() {});
+                    },
+                  ),
+                if (currentStatusCode == '15' || currentStatusCode == '10')
+                  StatusButton(
+                    status: StudentStatus().near,
+                    studentTracking: widget.studentTracking,
+                    onTap: () {
+                      widget.travelHeader.headerStatus = HeaderStatus().start;
+                      setState(() {});
+                    },
+                  ),
+                if (currentStatusCode == '15' || currentStatusCode == '10')
+                  StatusButton(
+                    status: StudentStatus().completed,
+                    studentTracking: widget.studentTracking,
+                    onTap: () {
+                      widget.travelHeader.headerStatus = HeaderStatus().start;
+                      setState(() {});
+                    },
+                  ),
+                if (currentStatusCode != '00' && currentStatusCode != '05')
+                  StatusButton(
+                    status: StudentStatus().changedDirection,
+                    studentTracking: widget.studentTracking,
+                    onTap: () {
+                      setState(() {});
+                    },
+                  ),
+                if (currentStatusCode == '20')
+                  StatusButton(
+                    status: StudentStatus().confirmedByParent,
+                    studentTracking: widget.studentTracking,
+                    onTap: () {
+                      setState(() {});
+                    },
+                  ),
+              ],
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Expanded(
+              child: TackingArea(
+                studentTrackingList: widget.studentTracking.studentTrackingList,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

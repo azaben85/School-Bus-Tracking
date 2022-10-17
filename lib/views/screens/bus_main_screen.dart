@@ -1,6 +1,7 @@
 import 'package:bustracker/views/screens/history_screen.dart';
 import 'package:bustracker/views/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class BusMainScreen extends StatefulWidget {
   const BusMainScreen({super.key});
@@ -17,7 +18,14 @@ class _BusMainScreenState extends State<BusMainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('School Bus Tracking')),
+        title: Center(
+            child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('School Bus Tracking'),
+            Lottie.asset('assets/lottie/bus.json', width: 70, height: 70)
+          ],
+        )),
         backgroundColor: Colors.orange,
       ),
       bottomNavigationBar: BottomNavigationBar(

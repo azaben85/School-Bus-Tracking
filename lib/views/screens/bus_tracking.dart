@@ -1,6 +1,7 @@
 import 'package:bustracker/global/global_config.dart';
 import 'package:bustracker/models/status_model.dart';
 import 'package:bustracker/models/travel_tracking_header_model.dart';
+import 'package:bustracker/views/widgets/custom_button_widget.dart';
 import 'package:bustracker/views/widgets/label_widget.dart';
 import 'package:bustracker/views/widgets/status_widget.dart';
 import 'package:bustracker/views/widgets/student_status_widget.dart';
@@ -68,13 +69,7 @@ class _BusTrackingScreenState extends State<BusTrackingScreen> {
                       element.status!.code == '25';
                 }))
               InkWell(
-                child: Text(
-                  'Complete Tracking',
-                  style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold),
-                ),
+                child: CustomButton(label: 'Complete Tracking'),
                 onTap: () {
                   widget.travelHeader.endTime = DateTime.now();
                   widget.travelHeader.headerStatus = HeaderStatus().completed;

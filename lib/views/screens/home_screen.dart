@@ -1,3 +1,7 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:bustracker/views/widgets/custom_button_widget.dart';
+import 'package:flutter/material.dart';
+
 import 'package:bustracker/models/status_model.dart';
 import 'package:bustracker/models/student_tracking_model.dart';
 import 'package:bustracker/models/travel_tracking_header_model.dart';
@@ -5,7 +9,6 @@ import 'package:bustracker/repositories/students.dart';
 import 'package:bustracker/repositories/travel_header_list.dart';
 import 'package:bustracker/views/screens/bus_tracking.dart';
 import 'package:bustracker/views/widgets/student_widget.dart';
-import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -19,7 +22,7 @@ class HomeScreen extends StatelessWidget {
             height: 15,
           ),
           InkWell(
-            child: const Text('Start Journey'),
+            child: CustomButton(label: 'Start Journey'),
             onTap: () {
               TravelHeader travelHeader = TravelHeader(
                   headerStatus: HeaderStatus().pending,

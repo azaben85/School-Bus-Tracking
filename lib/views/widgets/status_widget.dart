@@ -24,8 +24,11 @@ class StatusButtonWidget extends StatelessWidget {
             border: Border.all(color: status!.color!)),
         child: Padding(
           padding: const EdgeInsets.all(3.0),
-          child:
-              Text('${status!.desc}', style: TextStyle(color: status!.color!)),
+          child: Text('${status!.desc}',
+              style: TextStyle(
+                  color: status!.color!,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14)),
         ));
   }
 }
