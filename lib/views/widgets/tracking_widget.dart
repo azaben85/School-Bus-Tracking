@@ -11,8 +11,8 @@ class TackingArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        margin: const EdgeInsets.all(5),
-        padding: const EdgeInsets.all(5),
+        margin: const EdgeInsets.only(top: 5, bottom: 5, left: 10, right: 10),
+        padding: const EdgeInsets.only(top: 5, bottom: 5, left: 20, right: 20),
         color: Colors.white,
         child: ListView.builder(
           itemCount: studentTrackingList!.length,
