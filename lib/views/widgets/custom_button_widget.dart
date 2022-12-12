@@ -17,8 +17,9 @@ class CustomButton extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(3.0),
           child: Text(label,
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+              style: TextStyle(
+                  color: Color.fromARGB(255, 238, 95, 95),
+                  fontWeight: FontWeight.bold)),
         ));
   }
 }

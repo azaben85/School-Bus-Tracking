@@ -5,7 +5,7 @@ import 'package:bustracker/global/global_config.dart';
 import 'package:bustracker/models/status_model.dart';
 import 'package:bustracker/models/student_tracking_model.dart';
 import 'package:bustracker/models/travel_tracking_header_model.dart';
-import 'package:bustracker/views/screens/bus_tracking.dart';
+import 'package:bustracker/views/BusTrackingScreen/bus_tracking.dart';
 import 'package:bustracker/views/widgets/label_widget.dart';
 import 'package:bustracker/views/widgets/status_widget.dart';
 import 'package:bustracker/views/widgets/tracking_widget.dart';
@@ -59,7 +59,7 @@ class _StudentTrackingScreenState extends State<StudentTrackingScreen> {
             ),
             LabelValue(
               label: 'Address:',
-              value: widget.studentTracking.student!.address!,
+              value: widget.studentTracking.student!.address,
             ),
             const SizedBox(
               height: 15,

@@ -7,4 +7,4 @@ String formatDate(DateTime dateTime) {
   return formattedDate;
 }
 
-Color globalBackgroundColor = Color.fromARGB(255, 228, 203, 165);
+Color globalBackgroundColor = Color.fromRGBO(255, 255, 255, 1);

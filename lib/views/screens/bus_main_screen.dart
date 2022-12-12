@@ -21,12 +21,15 @@ class _BusMainScreenState extends State<BusMainScreen> {
         title: Center(
             child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('School Bus Tracking'),
-            Lottie.asset('assets/lottie/bus.json', width: 70, height: 70)
+          // ignore: prefer_const_literals_to_create_immutables
+          children: const [
+            Text(
+              'School Bus Tracking',
+              style: TextStyle(color: Colors.black),
+            ),
           ],
         )),
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.white,
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.orange,
